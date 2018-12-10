@@ -1,4 +1,5 @@
 apply plugin: 'java'
+apply plugin: 'jacoco'
 
 repositories {
     mavenCentral()
@@ -7,6 +8,7 @@ repositories {
 dependencies {
     testCompile 'junit:junit:4.12'
     testCompile("org.assertj:assertj-core:3.11.1")
+	jacocoAnt 'org.jacoco:org.jacoco.ant:0.8.1:nodeps'
 }
 
 test {
@@ -15,7 +17,8 @@ test {
 
 
 
-plugins {
-    id 'jacoco'
+jacoco {
+	toolVersion = '0.8.1'
 }
+
 
